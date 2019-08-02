@@ -6,6 +6,6 @@
   </head>
   <body>
     <h1>Register Laravel</h1>
-    <a href="{{ url('verify').$user->token.'/'.$user->id }}">Click for activate your account</a>
+    <a href="{{ url('verify/').$user->token.'/'.$user->id }}">Click for activate your account</a>
   </body>
 </html>
