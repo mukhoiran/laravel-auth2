@@ -93,4 +93,30 @@ class RegisterController extends Controller
         // Send email
         Mail::to($user->email)->send(new userRegistered($user));
     }
+
+    /**
+     * verification from email.
+     *
+     * @param  string  $token,$id
+     * @return \App\User
+     */
+    public function verify_register($token,$id)
+    {
+      $user = User::find($id);
+
+      if(!$user){
+        return redirect('login')->with('warning', 'user not found');
+      }
+
+      if($user->token != $token){
+        return redirect('login')->with('warning', 'token missmatch');
+      }
+
+      $user->status = 1;
+      $user->save();
+
+      // return and redirect
+      $this->guard()->login($user);
+      return redirect('/home');
+    }
 }
