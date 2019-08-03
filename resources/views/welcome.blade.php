@@ -93,6 +93,27 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <hr>
+                <ol>
+                  <li> Configure DB on .env </li>
+                  <li> Configure MAIL on .env (with Mailtrap.io) </li>
+                  <li> Create Auth Laravel (#php artisan make:auth) </li>
+                  <li> Add field token (string) and status (tinyInteger)->default(0) on migration user </li>
+                  <li> php artisan migrate </li>
+                  <li> Add fillable token and status on User model </li>
+                  <li> RegisterController => add field token (str_random(20)) </li>
+                  <li> Try to Register </li>
+                  <li> Add function register on controller </li>
+                  <li> Add Illuminate\Http\Request on controller </li>
+                  <li> Setup send email </li>
+                  <li> php artisan make:mail userRegistered </li>
+                  <li> Set up userRegistered </li>
+                  <li> load mail in ResgiterController </li>
+                  <li> add routes verify </li>
+                  <li> add function verify </li>
+                  <li> add message error on login menu </li>
+                  <li> verify status user before login </li>
+                </ol>
             </div>
         </div>
     </body>
